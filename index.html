@@ -3,37 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icon66.jpg">
+    <link rel="icon" href="download.png">
     <title>مدرسة الحمدانية الابتدائية المختلطة</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            /* نظام الألوان الفخم والمدرسي */
-            --royal-blue: #1e3a8a;
-            --deep-navy: #0f172a;
-            --elegant-gold: #d4af37;
-            --warm-gold: #f59e0b;
-            --rich-burgundy: #7c2d12;
-            --soft-cream: #fefce8;
-            --pearl-white: #f8fafc;
-            --sage-green: #059669;
-            --deep-purple: #581c87;
-            --charcoal: #374151;
+            /* نظام الألوان الفخم والمدرسي المحدث */
+            --royal-navy: #0f1419;
+            --deep-purple: #2d1b69;
+            --royal-blue: #1e40af;
+            --elegant-gold: #b8860b;
+            --rich-burgundy: #722f37;
+            --sage-green: #065f46;
+            --charcoal: #1f2937;
+            --pearl-white: #fefefe;
+            --soft-cream: #fffbeb;
+            --deep-navy: #0c1220;
+            --platinum: #e5e7eb;
+            --champagne: #f7e6ad;
             
-            /* تدرجات الألوان */
-            --primary-gradient: linear-gradient(135deg, var(--royal-blue), var(--deep-navy));
-            --gold-gradient: linear-gradient(135deg, var(--elegant-gold), var(--warm-gold));
+            /* تدرجات الألوان الفاخرة */
             --luxury-gradient: linear-gradient(135deg, var(--deep-purple), var(--royal-blue));
+            --gold-gradient: linear-gradient(135deg, #ffd700, var(--elegant-gold));
+            --royal-gradient: linear-gradient(135deg, var(--royal-navy), var(--deep-purple));
+            --elegant-gradient: linear-gradient(135deg, var(--rich-burgundy), var(--deep-purple));
+            --platinum-gradient: linear-gradient(135deg, var(--pearl-white), var(--platinum));
+            --champagne-gradient: linear-gradient(135deg, var(--champagne), var(--soft-cream));
             
-            /* الظلال الفخمة */
-            --luxury-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
-            --gold-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-            --soft-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            /* الظلال الفخمة المحدثة */
+            --luxury-shadow: 0 25px 50px rgba(45, 27, 105, 0.2);
+            --gold-shadow: 0 15px 35px rgba(184, 134, 11, 0.4);
+            --soft-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            --deep-shadow: 0 30px 60px rgba(12, 18, 32, 0.25);
+            --glow-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
             
-            /* الانتقالات السلسة */
-            --smooth-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --bounce-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            /* الانتقالات السلسة المحسنة */
+            --smooth-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --bounce-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            --quick-transition: all 0.2s ease-out;
         }
         
         * {
@@ -75,13 +83,13 @@
             50% { transform: translateY(-20px) rotate(1deg); }
         }
         
-        /* رأس الصفحة الفخم */
+        /* رأس الصفحة الفخم المحدث */
         header {
-            background: var(--primary-gradient);
+            background: var(--royal-gradient);
             color: white;
-            padding: 1.5rem 0;
+            padding: 2.5rem 0;
             text-align: center;
-            box-shadow: var(--luxury-shadow);
+            box-shadow: var(--deep-shadow);
             position: relative;
             overflow: hidden;
         }
@@ -94,9 +102,9 @@
             width: 200%;
             height: 200%;
             background: 
-                radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%),
-                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
-            animation: headerShine 8s linear infinite;
+                radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%),
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.08) 50%, transparent 70%);
+            animation: headerShine 12s linear infinite;
         }
         
         @keyframes headerShine {
@@ -109,70 +117,81 @@
             z-index: 2;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 2rem;
         }
         
         .logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
-            animation: logoFloat 3s ease-in-out infinite;
+            margin-bottom: 2rem;
+            animation: logoFloat 4s ease-in-out infinite;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 2rem;
         }
         
         @keyframes logoFloat {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-15px); }
         }
         
         .logo img {
-            height: 80px;
-            filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.4));
+            height: 100px;
+            filter: drop-shadow(0 8px 25px rgba(255, 215, 0, 0.5));
             transition: var(--smooth-transition);
+            border-radius: 50%;
+            border: 4px solid var(--elegant-gold);
+            background: var(--platinum-gradient);
+            padding: 10px;
         }
         
         .logo:hover img {
-            transform: scale(1.1) rotate(5deg);
-            filter: drop-shadow(0 10px 25px rgba(212, 175, 55, 0.6));
+            transform: scale(1.15) rotate(8deg);
+            filter: drop-shadow(0 15px 35px rgba(255, 215, 0, 0.7));
+            box-shadow: var(--glow-shadow);
         }
         
         .logo-text h1 {
             font-family: 'Amiri', serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: titleGlow 2s ease-in-out infinite alternate;
+            animation: titleGlow 3s ease-in-out infinite alternate;
             text-align: center;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 1px;
         }
         
         @keyframes titleGlow {
-            from { filter: brightness(1); }
-            to { filter: brightness(1.2); }
+            from { filter: brightness(1) drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)); }
+            to { filter: brightness(1.3) drop-shadow(0 0 20px rgba(255, 215, 0, 0.6)); }
         }
         
         .logo-text p {
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
-            opacity: 0.95;
-            font-weight: 300;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--champagne);
+            font-weight: 400;
             letter-spacing: 1px;
             text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
         }
         
-        /* شريط التنقل الفخم */
+        /* شريط التنقل الفخم المحدث */
         nav {
-            background: var(--luxury-gradient);
-            padding: 0.8rem 0;
+            background: var(--elegant-gradient);
+            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: var(--luxury-shadow);
-            backdrop-filter: blur(10px);
+            box-shadow: var(--deep-shadow);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid var(--elegant-gold);
         }
         
         .nav-container {
@@ -204,49 +223,67 @@
         }
         
         nav ul li a {
-            color: white;
+            color: var(--pearl-white);
             text-decoration: none;
             font-weight: 600;
-            padding: 0.6rem 1rem;
+            padding: 1rem 1.5rem;
             border-radius: 25px;
-            transition: var(--bounce-transition);
+            transition: var(--smooth-transition);
             position: relative;
             overflow: hidden;
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-size: clamp(0.8rem, 1.5vw, 1rem);
             white-space: nowrap;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
         }
         
         nav ul li a::before {
             content: "";
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
             background: var(--gold-gradient);
             transition: var(--smooth-transition);
             z-index: -1;
+            opacity: 0;
         }
         
         nav ul li a:hover::before {
-            left: 0;
+            opacity: 1;
         }
         
         nav ul li a:hover {
             color: var(--deep-navy);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: var(--gold-shadow);
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: var(--glow-shadow);
+            border-color: var(--elegant-gold);
         }
         
-        /* شريط الأخبار المتحرك */
+        nav ul li a i {
+            font-size: 1.1em;
+            transition: var(--smooth-transition);
+        }
+        
+        nav ul li a:hover i {
+            transform: scale(1.3) rotate(15deg);
+        }
+        
+        /* شريط الأخبار المتحرك المحدث */
         .news-ticker {
-            background: var(--gold-gradient);
+            background: var(--champagne-gradient);
             color: var(--deep-navy);
-            padding: 0.8rem 0;
+            padding: 1rem 0;
             overflow: hidden;
             position: relative;
             box-shadow: var(--soft-shadow);
+            border-top: 3px solid var(--elegant-gold);
+            border-bottom: 3px solid var(--elegant-gold);
         }
         
         .news-ticker::before {
@@ -256,8 +293,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: tickerShine 3s linear infinite;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.3), transparent);
+            animation: tickerShine 4s linear infinite;
         }
         
         @keyframes tickerShine {
@@ -684,6 +721,166 @@
             text-decoration: underline;
         }
         
+        /* قسم المناهج الأساسية */
+        .curriculum-section {
+            margin: 3rem 0;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--soft-cream), white);
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .curriculum-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(30, 58, 138, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+            z-index: 1;
+        }
+        
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .curriculum-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 25px;
+            box-shadow: var(--luxury-shadow);
+            transition: var(--smooth-transition);
+            border-top: 5px solid var(--royal-blue);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .curriculum-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: var(--smooth-transition);
+        }
+        
+        .curriculum-card:hover::before {
+            left: 100%;
+        }
+        
+        .curriculum-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(30, 58, 138, 0.15);
+            border-top-color: var(--elegant-gold);
+        }
+        
+        .curriculum-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--deep-navy);
+            box-shadow: var(--gold-shadow);
+            transition: var(--bounce-transition);
+        }
+        
+        .curriculum-card:hover .curriculum-icon {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+        
+        .curriculum-card h3 {
+            color: var(--royal-blue);
+            font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+            margin-bottom: 1rem;
+            font-family: 'Amiri', serif;
+            font-weight: 700;
+        }
+        
+        .curriculum-card p {
+            color: var(--charcoal);
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .curriculum-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-download,
+        .btn-view {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+            transition: var(--bounce-transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-download {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: var(--luxury-shadow);
+        }
+        
+        .btn-view {
+            background: var(--gold-gradient);
+            color: var(--deep-navy);
+            box-shadow: var(--gold-shadow);
+        }
+        
+        .btn-download::before,
+        .btn-view::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: var(--smooth-transition);
+        }
+        
+        .btn-download:hover::before,
+        .btn-view:hover::before {
+            left: 100%;
+        }
+        
+        .btn-download:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.3);
+        }
+        
+        .btn-view:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+
         /* قسم معرض الصور */
         .gallery-section {
             margin: 3rem 0;
@@ -773,6 +970,245 @@
             line-height: 1.6;
         }
         
+        /* قسم الأنشطة والفعاليات */
+        .activities-section {
+            margin: 3rem 0;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--pearl-white), var(--soft-cream));
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .activities-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(88, 28, 135, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(5, 150, 105, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 3rem;
+        }
+        
+        .activity-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--luxury-shadow);
+            transition: var(--smooth-transition);
+            position: relative;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(88, 28, 135, 0.15);
+        }
+        
+        .activity-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .activity-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--smooth-transition);
+        }
+        
+        .activity-card:hover .activity-image img {
+            transform: scale(1.1);
+        }
+        
+        .activity-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(88, 28, 135, 0.7), rgba(5, 150, 105, 0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            opacity: 0;
+            transition: var(--smooth-transition);
+        }
+        
+        .activity-card:hover .activity-overlay {
+            opacity: 1;
+        }
+        
+        .activity-date {
+            background: var(--gold-gradient);
+            color: var(--deep-navy);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: var(--gold-shadow);
+        }
+        
+        .activity-content {
+            padding: 1.5rem;
+        }
+        
+        .activity-category {
+            display: inline-block;
+            background: var(--luxury-gradient);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .activity-card h3 {
+            color: var(--royal-blue);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 1rem;
+            font-family: 'Amiri', serif;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        
+        .activity-card p {
+            color: var(--charcoal);
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .activity-details {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .activity-details span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--sage-green);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .activity-details i {
+            color: var(--elegant-gold);
+        }
+        
+        /* التقويم الشهري */
+        .activities-calendar {
+            background: white;
+            padding: 2rem;
+            border-radius: 25px;
+            box-shadow: var(--luxury-shadow);
+            position: relative;
+            z-index: 2;
+            border-top: 5px solid var(--deep-purple);
+        }
+        
+        .activities-calendar h3 {
+            color: var(--royal-blue);
+            font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'Amiri', serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .activities-calendar i {
+            color: var(--elegant-gold);
+            font-size: 1.2em;
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .calendar-month {
+            background: linear-gradient(135deg, var(--soft-cream), white);
+            padding: 1.5rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--sage-green);
+            transition: var(--smooth-transition);
+        }
+        
+        .calendar-month:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--soft-shadow);
+        }
+        
+        .calendar-month h4 {
+            color: var(--deep-purple);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 1rem;
+            font-family: 'Amiri', serif;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--elegant-gold);
+        }
+        
+        .calendar-month ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .calendar-month li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: var(--smooth-transition);
+        }
+        
+        .calendar-month li:hover {
+            background: rgba(212, 175, 55, 0.1);
+            padding-left: 0.5rem;
+            border-radius: 10px;
+        }
+        
+        .calendar-month li:last-child {
+            border-bottom: none;
+        }
+        
+        .calendar-month .date {
+            background: var(--gold-gradient);
+            color: var(--deep-navy);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: var(--soft-shadow);
+        }
+
         /* قسم اتصل بنا */
         .contact-section {
             margin: 4rem 0;
@@ -1181,7 +1617,7 @@
     <header>
         <div class="header-content">
             <div class="logo">
-                <img src="icon66.jpg" alt="شعار المدرسة">
+                <img src="download.png" alt="شعار المدرسة">
                 <div class="logo-text">
                     <h1>مدرسة الحمدانية الابتدائية المختلطة</h1>
                     <p>تأسست عام 1969 - صرح تعليمي عريق</p>
@@ -1202,8 +1638,10 @@
                 <li><a href="#principal"><i class="fas fa-user-tie"></i> مدير المدرسة</a></li>
                 <li><a href="#results"><i class="fas fa-chart-line"></i> نتائج الطلاب الفصلية</a></li>
                 <li><a href="#monthly-results"><i class="fas fa-calendar-alt"></i> النتائج الشهرية</a></li>
+                <li><a href="#curriculum"><i class="fas fa-book"></i> المناهج الأساسية</a></li>
                 <li><a href="#gallery"><i class="fas fa-images"></i> معرض الصور</a></li>
                 <li><a href="#news"><i class="fas fa-newspaper"></i> أخبار المدرسة</a></li>
+                <li><a href="#activities"><i class="fas fa-calendar-check"></i> الأنشطة والفعاليات</a></li>
                 <li><a href="#contact"><i class="fas fa-phone"></i> اتصل بنا</a></li>
             </ul>
         </div>
@@ -1246,11 +1684,11 @@
 
         <!-- القصيدة -->
         <div class="poem">
-            <p>مَنْ لَمْ يَذُقْ مُرَّ التَّعَلُّمِ سَاعَةً</p>
-            <p>تَجَرَّعَ ذُلَّ الْجَهْلِ طُولَ حَيَاتِهِ</p>
-            <p>وَمَنْ فَاتَهُ الْعِلْمُ فَقَدْ فَاتَهُ الْعُلَى</p>
-            <p>فَلَيْسَ لِغَيْرِ الْعِلْمِ فِي النَّاسِ قِيمَةُ</p>
-            <div class="poem-author">--الامام الشافعي</div>
+            <p>مدرسةٌ كالشّمسِ في الأفـقِ تـشرقُ</p>
+            <p>وبـنـورِ العـلـمِ تـزهـو وتـبـهـجُ</p>
+            <p>خمسـونَ عـامـاً وهـيَ الـعـلمُ رايـةٌ</p>
+            <p>تـسـمـو بـهـا فـي الـعـليـاءِ الـمـنـبـجُ</p>
+            <div class="poem-author">- الشاعر معروف الرصافي</div>
         </div>
 
         <!-- قسم الإحصائيات -->
@@ -1370,6 +1808,110 @@
             </div>
         </section>
 
+        <!-- قسم المناهج الأساسية -->
+        <section id="curriculum" class="curriculum-section">
+            <div class="section-title">
+                <h2>المناهج الأساسية</h2>
+            </div>
+            <div class="curriculum-grid">
+                <div class="curriculum-card">
+                    <div class="curriculum-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>منهج اللغة العربية</h3>
+                    <p>منهج شامل لتعليم اللغة العربية وقواعدها وآدابها للمراحل الابتدائية</p>
+                    <div class="curriculum-actions">
+                        <a href="curriculum/kotobati - كتاب العادات السبع للناس الأكثر فعالية.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> تحميل
+                        </a>
+                        <a href="curriculum/kotobati - كتاب العادات السبع للناس الأكثر فعالية.pdf" class="btn-view" target="_blank">
+                            <i class="fas fa-eye"></i> قراءة
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="curriculum-card">
+                    <div class="curriculum-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>منهج الرياضيات</h3>
+                    <p>منهج متدرج لتعليم الرياضيات من الأساسيات إلى المفاهيم المتقدمة</p>
+                    <div class="curriculum-actions">
+                        <a href="curriculum/Noor-Book.com  التأثير علم النفس الاقناع.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> تحميل
+                        </a>
+                        <a href="curriculum/Noor-Book.com  التأثير علم النفس الاقناع.pdf" class="btn-view" target="_blank">
+                            <i class="fas fa-eye"></i> قراءة
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="curriculum-card">
+                    <div class="curriculum-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>منهج العلوم</h3>
+                    <p>منهج تفاعلي لتعليم العلوم الطبيعية والتجارب العملية</p>
+                    <div class="curriculum-actions">
+                        <a href="curriculum/Noor-Book.com  العادات السبع.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> تحميل
+                        </a>
+                        <a href="curriculum/Noor-Book.com  العادات السبع.pdf" class="btn-view" target="_blank">
+                            <i class="fas fa-eye"></i> قراءة
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="curriculum-card">
+                    <div class="curriculum-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>منهج الجغرافيا</h3>
+                    <p>منهج شامل لتعليم الجغرافيا والتاريخ والدراسات الاجتماعية</p>
+                    <div class="curriculum-actions">
+                        <a href="curriculum/geography_curriculum.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> تحميل
+                        </a>
+                        <a href="curriculum/geography_curriculum.pdf" class="btn-view" target="_blank">
+                            <i class="fas fa-eye"></i> قراءة
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="curriculum-card">
+                    <div class="curriculum-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>منهج اللغة الإنجليزية</h3>
+                    <p>منهج حديث لتعليم اللغة الإنجليزية بطرق تفاعلية ومبتكرة</p>
+                    <div class="curriculum-actions">
+                        <a href="curriculum/english_curriculum.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> تحميل
+                        </a>
+                        <a href="curriculum/english_curriculum.pdf" class="btn-view" target="_blank">
+                            <i class="fas fa-eye"></i> قراءة
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="curriculum-card">
+                    <div class="curriculum-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>منهج التربية الفنية</h3>
+                    <p>منهج إبداعي لتنمية المواهب الفنية والحرفية لدى الطلاب</p>
+                    <div class="curriculum-actions">
+                        <a href="curriculum/art_curriculum.pdf" class="btn-download" download>
+                            <i class="fas fa-download"></i> تحميل
+                        </a>
+                        <a href="curriculum/art_curriculum.pdf" class="btn-view" target="_blank">
+                            <i class="fas fa-eye"></i> قراءة
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- قسم معرض الصور -->
         <section id="gallery" class="gallery-section">
             <div class="section-title">
@@ -1445,11 +1987,157 @@
             </div>
         </section>
 
-<!-- قسم اتصل بنا -->
-<section id="contact" class="contact-section">
-    <div class="section-title">
-        <h2>اتصل بنا</h2>
-    </div>
+        <!-- قسم الأنشطة والفعاليات -->
+        <section id="activities" class="activities-section">
+            <div class="section-title">
+                <h2>الأنشطة والفعاليات المدرسية</h2>
+            </div>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="النشاط الرياضي">
+                        <div class="activity-overlay">
+                            <div class="activity-date">15 سبتمبر 2023</div>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-category">رياضة</div>
+                        <h3>بطولة كرة القدم المدرسية</h3>
+                        <p>بطولة سنوية تجمع جميع صفوف المدرسة في منافسة رياضية شيقة تهدف إلى تعزيز روح الفريق والمنافسة الشريفة.</p>
+                        <div class="activity-details">
+                            <span><i class="fas fa-clock"></i> 9:00 صباحاً</span>
+                            <span><i class="fas fa-map-marker-alt"></i> الملعب الرياضي</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="المعرض العلمي">
+                        <div class="activity-overlay">
+                            <div class="activity-date">22 أكتوبر 2023</div>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-category">علوم</div>
+                        <h3>المعرض العلمي السنوي</h3>
+                        <p>معرض يعرض مشاريع الطلاب العلمية والاختراعات البسيطة، مع تجارب علمية تفاعلية ومسابقات معرفية.</p>
+                        <div class="activity-details">
+                            <span><i class="fas fa-clock"></i> 10:00 صباحاً</span>
+                            <span><i class="fas fa-map-marker-alt"></i> قاعة المعارض</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="الأمسية الثقافية">
+                        <div class="activity-overlay">
+                            <div class="activity-date">5 نوفمبر 2023</div>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-category">ثقافة</div>
+                        <h3>الأمسية الثقافية والأدبية</h3>
+                        <p>أمسية تتضمن إلقاء الشعر والقصص، والعروض المسرحية، ومسابقات ثقافية متنوعة لتنمية المواهب الأدبية.</p>
+                        <div class="activity-details">
+                            <span><i class="fas fa-clock"></i> 6:00 مساءً</span>
+                            <span><i class="fas fa-map-marker-alt"></i> المسرح المدرسي</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="ورشة الفنون">
+                        <div class="activity-overlay">
+                            <div class="activity-date">12 ديسمبر 2023</div>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-category">فنون</div>
+                        <h3>ورشة الفنون والحرف اليدوية</h3>
+                        <p>ورشة تدريبية لتعليم الطلاب مختلف الفنون والحرف اليدوية، مع معرض لعرض إبداعات الطلاب الفنية.</p>
+                        <div class="activity-details">
+                            <span><i class="fas fa-clock"></i> 2:00 مساءً</span>
+                            <span><i class="fas fa-map-marker-alt"></i> قاعة الفنون</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="رحلة استكشافية">
+                        <div class="activity-overlay">
+                            <div class="activity-date">18 يناير 2024</div>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-category">رحلات</div>
+                        <h3>الرحلة الاستكشافية التعليمية</h3>
+                        <p>رحلة تعليمية إلى المتحف الوطني والمواقع الأثرية لتعزيز المعرفة التاريخية والثقافية لدى الطلاب.</p>
+                        <div class="activity-details">
+                            <span><i class="fas fa-clock"></i> 8:00 صباحاً</span>
+                            <span><i class="fas fa-map-marker-alt"></i> المتحف الوطني</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="يوم البيئة">
+                        <div class="activity-overlay">
+                            <div class="activity-date">25 فبراير 2024</div>
+                        </div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-category">بيئة</div>
+                        <h3>يوم البيئة والاستدامة</h3>
+                        <p>فعالية توعوية حول أهمية المحافظة على البيئة، مع أنشطة زراعة الأشجار وإعادة التدوير والتنظيف.</p>
+                        <div class="activity-details">
+                            <span><i class="fas fa-clock"></i> 7:00 صباحاً</span>
+                            <span><i class="fas fa-map-marker-alt"></i> حديقة المدرسة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="activities-calendar">
+                <h3><i class="fas fa-calendar-alt"></i> التقويم الشهري للأنشطة</h3>
+                <div class="calendar-grid">
+                    <div class="calendar-month">
+                        <h4>سبتمبر 2023</h4>
+                        <ul>
+                            <li><span class="date">15</span> بطولة كرة القدم</li>
+                            <li><span class="date">20</span> ورشة الخط العربي</li>
+                            <li><span class="date">28</span> مسابقة الرياضيات</li>
+                        </ul>
+                    </div>
+                    <div class="calendar-month">
+                        <h4>أكتوبر 2023</h4>
+                        <ul>
+                            <li><span class="date">05</span> يوم المعلم العالمي</li>
+                            <li><span class="date">22</span> المعرض العلمي</li>
+                            <li><span class="date">30</span> حفل الخريف</li>
+                        </ul>
+                    </div>
+                    <div class="calendar-month">
+                        <h4>نوفمبر 2023</h4>
+                        <ul>
+                            <li><span class="date">05</span> الأمسية الثقافية</li>
+                            <li><span class="date">15</span> مسابقة القراءة</li>
+                            <li><span class="date">25</span> يوم الطفل العالمي</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم اتصل بنا -->
+        <section id="contact" class="contact-section">
+            <div class="section-title">
+                <h2>اتصل بنا</h2>
+            </div>
     <div class="contact-container">
         <div class="contact-info">
             <div class="contact-card">
@@ -1669,5 +2357,4 @@
         });
     </script>
 </body>
-
 </html>
