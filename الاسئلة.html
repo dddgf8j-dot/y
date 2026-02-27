@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>قالب العلوم (نص مجمّع)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+        @page { size: A4; margin: 0; }
+
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 10px;
+            padding-bottom: 150px;
+        }
+
+        .paper {
+            background: white;
+            width: 100%;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 5mm;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+
+        .border-frame {
+            border: 2px solid #000;
+            min-height: 260mm; 
+            padding: 3mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            gap: 15px; 
+        }
+
+        /* --- تنسيق المربعات --- */
+        .edit-box {
+            border: 1px dashed transparent; 
+            padding: 2px 5px;
+            outline: none;
+            transition: 0.2s;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .edit-box:hover, .edit-box:focus {
+            background-color: #f9f9f9;
+            border-color: #ccc; 
+        }
+        
+        /* الصور */
+        .edit-box img {
+            max-width: 100%;
+            display: block;
+            margin: 5px auto;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .edit-box img.selected {
+            border: 2px solid #007bff;
+            box-shadow: 0 0 10px rgba(0,123,255,0.5);
+        }
+
+        /* الترويسة */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px double #000;
+            padding-bottom: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+            text-align: center;
+        }
+        .header-col { width: 33%; display: flex; flex-direction: column; gap: 2px; }
+
+        /* الملاحظة */
+        .note-box {
+            text-align: center;
+            font-weight: bold;
+            background-color: #e6e6e6;
+            border: 1px solid #000;
+            padding: 5px;
+            font-size: 10pt;
+            margin-bottom: 5px;
+        }
+
+        /* منطقة الأسئلة */
+        #questions-area {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* مسافة بين كل سؤال وآخر */
+            flex-grow: 1; 
+        }
+
+        .question-block {
+            display: flex;
+            flex-direction: column;
+            gap: 4px; 
+        }
+
+        /* منطوق السؤال (مربع 1) */
+        .q-head {
+            background-color: #d0d0d0 !important;
+            font-weight: bold;
+            font-size: 12pt;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid #999;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* جسم السؤال (مربع 2 - يحتوي كل النقاط) */
+        .q-body {
+            font-size: 11pt;
+            line-height: 1.6;
+            padding-right: 5px;
+            white-space: pre-wrap; /* يحافظ على الأسطر الجديدة */
+            min-height: 20px;
+        }
+
+        /* التذييل */
+        .footer {
+            margin-top: auto; 
+            padding-top: 10px;
+            border-top: 1px solid #000;
+        }
+        
+        .wish-text {
+            text-align: center;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .teacher-sig {
+            text-align: left;
+            padding-left: 20px;
+            font-weight: bold;
+            font-size: 11pt;
+        }
+
+        .programmer-name {
+            margin-top: 5px;
+            font-size: 8pt;
+            color: #555;
+            text-align: left;
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border: 1px dotted #cca000;
+            width: fit-content;
+        }
+
+        /* الأدوات */
+        .control-panel {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            border: 1px solid #ddd;
+        }
+
+        .img-tools {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            gap: 5px;
+            z-index: 10000;
+            background: #333;
+            padding: 8px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            width: max-content;
+        }
+
+        .btn { padding: 8px 15px; border: none; border-radius: 8px; color: white; font-weight: bold; font-family: 'Tajawal'; font-size: 12px; cursor: pointer; transition: 0.1s; }
+        .btn-print { background: #27ae60; }
+        .btn-note { background: #2980b9; }
+        .btn-cam { background: #d35400; }
+        .btn-tool { background: #555; padding: 8px 12px; font-size: 16px; }
+        .btn-del { background: #c0392b; }
+        .btn:active { transform: scale(0.95); }
+
+        @media print {
+            body { background: white; padding: 0; margin: 0; }
+            .paper { box-shadow: none; margin: 0; width: 100%; max-width: 100%; padding: 5mm; height: auto; }
+            .control-panel, .img-tools, .programmer-name { display: none !important; }
+            .edit-box { border: none; padding: 0; }
+            .q-head, .note-box { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+
+    <div class="img-tools" id="imgTools">
+        <button class="btn btn-tool" onclick="resizeImg(10)">➕</button>
+        <button class="btn btn-tool" onclick="resizeImg(-10)">➖</button>
+        <button class="btn btn-tool" onclick="alignImg('right')">➡️</button>
+        <button class="btn btn-tool" onclick="alignImg('center')">⏺️</button>
+        <button class="btn btn-tool" onclick="alignImg('left')">⬅️</button>
+        <button class="btn btn-tool btn-del" onclick="deleteImg()">🗑️</button>
+        <button class="btn btn-tool" onclick="closeImgTools()" style="background:none;">✖️</button>
+    </div>
+
+    <div class="control-panel">
+        <button class="btn btn-cam" onclick="insertImage()">📸 صورة</button>
+        <button class="btn btn-note" onclick="toggleNote()">👁️ الملاحظة</button>
+        <button class="btn btn-print" onclick="window.print()">🖨️ PDF</button>
+    </div>
+
+    <div class="paper">
+        <div class="border-frame">
+
+            <div class="header">
+                <div class="header-col">
+                    <div class="edit-box" contenteditable="true">إدارة</div>
+                    <div class="edit-box" contenteditable="true">مدرسة الجود الابتدائية</div>
+                    <div class="edit-box" contenteditable="true">للبنين</div>
+                </div>
+                <div class="header-col">
+                    <div class="edit-box" contenteditable="true">اسئلة امتحان نصف السنة</div>
+                    <div class="edit-box" contenteditable="true"> للعام الدراسي 2025 - 2026</div>
+                    <div class="edit-box" contenteditable="true">الدور الأول</div>
+                </div>
+                <div class="header-col">
+                    <div class="edit-box" contenteditable="true">المادة : العلوم</div>
+                    <div class="edit-box" contenteditable="true">الصف : السادس</div>
+                    <div class="edit-box" contenteditable="true">الزمن : ساعتان</div>
+                </div>
+            </div>
+
+            <div id="noteBox" class="note-box edit-box" contenteditable="true">
+                ملاحظة: الإجابة عن خمسة أسئلة فقط (لكل سؤال 20 درجة)
+            </div>
+
+            <div id="questions-area">
+                
+                <div class="question-block">
+                    <div class="q-head edit-box" contenteditable="true">س1/ عرف خمس مما يأتي:</div>
+                    <div class="q-body edit-box" contenteditable="true" id="focus-target">
+1- البناء الضوئي.
+2- المعادلة الكيميائية.
+3- التكاثر الخضري.
+4- الجهاز العصبي.
+5- الذرة.
+6- العتلة.
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="q-head edit-box" contenteditable="true">س2/ علل ما يأتي (اثنان فقط):</div>
+                    <div class="q-body edit-box" contenteditable="true">
+1- يجب أن تكون المعادلة الكيميائية موزونة.
+2- تجنب الجلوس قرب التلفاز لفترات طويلة.
+3- يُفضل استخدام الأسمدة العضوية للنباتات.
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="q-head edit-box" contenteditable="true">س3/ املأ الفراغات التالية بما يناسبها:</div>
+                    <div class="q-body edit-box" contenteditable="true">
+1- تسمى الوحدة البنائية للكائن الحي بـ ........................
+2- يرمز لعنصر الاوكسجين بالرمز ........................
+3- عضو التذوق في الإنسان هو ........................
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="q-head edit-box" contenteditable="true">س4/ أجب عن فرع واحد:</div>
+                    <div class="q-body edit-box" contenteditable="true">
+أ/ ارسم مع التأشير تركيب الزهرة.
+ب/ قارن بين الفلزات واللافلزات.
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="q-head edit-box" contenteditable="true">س5/ اختر الإجابة الصحيحة:</div>
+                    <div class="q-body edit-box" contenteditable="true">
+1- عدد عظام جسم الإنسان (206 - 300 - 150) عظمة.
+2- الغاز المستخدم في اطفاء الحرائق هو (الأوكسجين - CO2).
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="q-head edit-box" contenteditable="true">س6/ ما وظيفة (ثلاث فقط):</div>
+                    <div class="q-body edit-box" contenteditable="true">
+1- الجمجمة.
+2- غاز النيتروجين.
+3- الأجفان.
+4- البؤبؤ.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <div class="wish-text edit-box" contenteditable="true">
+                    دعائي لكم بالنجاح والموفقية
+                </div>
+                <div class="teacher-sig edit-box" contenteditable="true">
+                    معلم المادة: يعقوب الحمداني
+                </div>
+            </div>
+
+            <div class="programmer-name">
+                تمت البرمجة بواسطة: يعقوب الحمداني
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let lastFocusedBox = document.getElementById('focus-target');
+        let selectedImg = null;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadData();
+            attachEvents();
+            
+            const noteState = localStorage.getItem('note_display');
+            if (noteState) {
+                document.getElementById('noteBox').style.display = noteState;
+            }
+
+            document.body.addEventListener('click', function(e) {
+                if (e.target.tagName === 'IMG' && e.target.closest('.edit-box')) {
+                    selectImage(e.target);
+                } else if (!e.target.closest('.img-tools') && !e.target.classList.contains('btn-cam')) {
+                    closeImgTools();
+                }
+            });
+        });
+
+        function attachEvents() {
+            const boxes = document.querySelectorAll('.edit-box');
+            boxes.forEach((box, index) => {
+                box.addEventListener('click', () => { lastFocusedBox = box; });
+                box.addEventListener('input', () => { saveData(); });
+            });
+        }
+
+        function saveData() {
+            const content = document.querySelector('.border-frame').innerHTML;
+            localStorage.setItem('full_exam_paper_v7', content);
+        }
+
+        function loadData() {
+            const savedContent = localStorage.getItem('full_exam_paper_v7');
+            if (savedContent) {
+                document.querySelector('.border-frame').innerHTML = savedContent;
+                attachEvents();
+            }
+        }
+
+        // --- دوال الصور ---
+        function selectImage(img) {
+            if (selectedImg) selectedImg.classList.remove('selected');
+            selectedImg = img;
+            selectedImg.classList.add('selected');
+            document.getElementById('imgTools').style.display = 'flex';
+        }
+
+        function closeImgTools() {
+            if (selectedImg) selectedImg.classList.remove('selected');
+            selectedImg = null;
+            document.getElementById('imgTools').style.display = 'none';
+        }
+
+        function resizeImg(percent) {
+            if (selectedImg) {
+                let currentWidth = selectedImg.style.width || "50%";
+                let newWidth = parseInt(currentWidth) + percent;
+                if (newWidth < 10) newWidth = 10;
+                if (newWidth > 100) newWidth = 100;
+                selectedImg.style.width = newWidth + "%";
+                saveData();
+            }
+        }
+
+        function alignImg(align) {
+            if (selectedImg) {
+                selectedImg.style.margin = "5px"; 
+                if (align === 'center') { selectedImg.style.display = "block"; selectedImg.style.margin = "5px auto"; }
+                else if (align === 'right') { selectedImg.style.display = "block"; selectedImg.style.marginRight = "0"; selectedImg.style.marginLeft = "auto"; }
+                else if (align === 'left') { selectedImg.style.display = "block"; selectedImg.style.marginLeft = "0"; selectedImg.style.marginRight = "auto"; }
+                saveData();
+            }
+        }
+
+        function deleteImg() {
+            if (selectedImg && confirm('هل تريد حذف الصورة؟')) {
+                selectedImg.remove();
+                closeImgTools();
+                saveData();
+            }
+        }
+
+        function toggleNote() {
+            var note = document.getElementById('noteBox');
+            note.style.display = (note.style.display === 'none') ? 'block' : 'none';
+            localStorage.setItem('note_display', note.style.display);
+        }
+
+        function insertImage() {
+            document.getElementById('imageInput').click();
+        }
+
+        document.getElementById('imageInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgHtml = `<img src="${e.target.result}" style="width: 50%;">`;
+                    if (lastFocusedBox) {
+                        lastFocusedBox.focus();
+                        document.execCommand('insertHTML', false, imgHtml);
+                        saveData();
+                    } else {
+                        alert("حدد مكاناً للكتابة أولاً!");
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+            this.value = '';
+        });
+    </script>
+
+</body>
+</html>
